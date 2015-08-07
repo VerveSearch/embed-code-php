@@ -3,7 +3,7 @@
 namespace VerveSearch\Plugins; 
 
 /*
-*
+* Generates Embed Code
 *
 *
 */
@@ -13,11 +13,10 @@ class EmbedCodeGenerator{
 	private $url;
 	private $width;
 	private $height;
+	private $extra;
 
-	public function __construct($url,$width,$height){
-		$this->url = $url;
-		$this->width = $width;
-		$this->height = $height;
+	public function __construct(){
+		
 	}
 
 
@@ -29,9 +28,11 @@ class EmbedCodeGenerator{
 	 * @return string which is the generated embed code
 	 */
 
-	public function generateUrl($url,$width,$height){
-		 
+
+	public function generateUrl($url,$width,$height,$extra=null,$class=null){
+		return '<div class="'.$class.'"><textarea><iframe src="'.$url.'" width="'.$width.'" height="'.$height.'"></iframe>"'.$extra.'"</textarea></div>'; 
 	}
 
-
 }
+
+ 
